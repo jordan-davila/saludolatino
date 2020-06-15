@@ -14,11 +14,23 @@
         "cross-env": "^7.0",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.13",
+        "popper.js": "^1.12",
         "resolve-url-loader": "^3.1.0",
-        "sass": "^1.15.2",
-        "sass-loader": "^8.0.0"
+        "sass": "^1.20.1",
+        "sass-loader": "^8.0.0",
+        "vue": "^2.5.17",
+        "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "tailwindcss": "^1.4.6"
+        "@fortawesome/fontawesome-free": "^5.13.0",
+        "@fortawesome/fontawesome-pro": "^5.13.0",
+        "animate.css": "^4.1.0",
+        "inter-ui": "^3.13.1",
+        "tailwindcss": "^1.4.6",
+        "vue-js-modal": "^2.0.0-rc.3",
+        "vue-router": "^3.3.4",
+        "vue-social-sharing": "^3.0.0-beta.11",
+        "vue-video-player": "^5.0.2",
+        "vuex": "^3.4.0"
     }
 }
