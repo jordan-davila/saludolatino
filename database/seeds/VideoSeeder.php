@@ -2,15 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
-class VideoSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
+class VideoSeeder extends Seeder {
+    public function run() {
         //
     }
 }

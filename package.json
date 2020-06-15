@@ -24,6 +24,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.13.0",
         "@fortawesome/fontawesome-pro": "^5.13.0",
+        "@websanova/vue-auth": "^3.2.1-beta",
         "animate.css": "^4.1.0",
         "inter-ui": "^3.13.1",
         "tailwindcss": "^1.4.6",
