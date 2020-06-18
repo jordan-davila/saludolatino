@@ -16,7 +16,6 @@ class CreateUsersTable extends Migration {
             $table->string('name');
             $table->integer('role_id');
             $table->integer('price');
-            $table->string('categories')->nullable();
             $table->string('avatar')->nullable();
             $table->string('description')->nullable();
             $table->string('video_src')->nullable(); // Video Description

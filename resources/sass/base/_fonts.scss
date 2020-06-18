@@ -1,20 +1,12 @@
-@use "~inter-ui/default" with (
-  $inter-font-display: swap,
-  $inter-font-path: '~inter-ui/Inter (web)'
-);
-@use "~inter-ui/variable" with (
-  $inter-font-display: swap,
-  $inter-font-path: '~inter-ui/Inter (web)'
-);
-@include default.all;
-@include variable.all;
+@import "~inter-ui/default";
+@import "~inter-ui/variable";
 
 html {
-    font-family: "Inter", "system-ui";
+    font-family: "Inter", "system-ui" !important;
 }
 
 @supports (font-variation-settings: normal) {
     html {
-        font-family: "Inter var", "system-ui";
+        font-family: "Inter var", "system-ui" !important;
     }
 }

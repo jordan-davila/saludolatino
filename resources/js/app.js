@@ -9,7 +9,6 @@ import Vuex from "vuex";
 import VueRouter from "vue-router";
 import VModal from "vue-js-modal";
 import VueVideoPlayer from "vue-video-player";
-import "video.js/dist/video-js.css";
 import VueSocialSharing from "vue-social-sharing";
 import Routes from "./routes";
 import Store from "./store";

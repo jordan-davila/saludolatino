@@ -1,4 +1,5 @@
 import Home from "./pages/Home";
+import Estrellas from "./pages/Estrellas";
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
@@ -16,6 +17,14 @@ export default {
             path: "/",
             name: "home",
             component: Home,
+            meta: {
+                middleware: [guest]
+            }
+        },
+        {
+            path: "/estrellas",
+            name: "estrellas",
+            component: Estrellas,
             meta: {
                 middleware: [guest]
             }

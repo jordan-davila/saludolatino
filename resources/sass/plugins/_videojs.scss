@@ -1,0 +1,13 @@
+@import "~video.js/dist/video-js.css";
+
+.video-js {
+    position: unset !important;
+}
+
+.vjs-poster {
+    background-size: cover !important;
+}
+
+.video-js .vjs-tech {
+    object-fit: cover;
+}

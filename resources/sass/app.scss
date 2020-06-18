@@ -1,5 +1,9 @@
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Nunito");
+// Base
+@import "base/fonts";
+@import "plugins/tailwind";
+@import "base/icons";
+@import "plugins/videojs";
 
 // Variables
 @import "variables";
+@import "base/base";
