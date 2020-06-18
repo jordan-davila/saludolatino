@@ -1966,19 +1966,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    categories: {
+      get: function get() {
+        return this.$store.state.Categories.categories;
+      },
+      set: function set(value) {
+        return this.$stote.commit("setCategories", value);
+      }
+    }
+  },
+  created: function created() {
+    this.$store.dispatch("fetchCategories");
+  }
+});
 
 /***/ }),
 
@@ -50779,117 +50781,82 @@ var render = function() {
         "flex flex-col justify-between w-64 py-10 px-16 h-full border-r border-gray-100 border-solid"
     },
     [
-      _c("div", { staticClass: "top flex flex-col" }, [
-        _c("div", { staticClass: "logo mb-20" }),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "flex flex-col text-sm text-gray-300" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass:
-                  "mb-8 flex justify-between items-center hover:text-gray-800",
-                class: [_vm.$route.path == "/" ? "text-gray-800" : ""],
-                attrs: { to: "/" }
-              },
-              [
-                _c("span", [_vm._v("Inicio")]),
-                _vm._v(" "),
-                _c("i", { staticClass: "far fa-th-large" })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass:
-                  "mb-8 flex justify-between items-center hover:text-gray-800",
-                class: [
-                  _vm.$route.path.includes("estrellas") ? "text-gray-800" : ""
-                ],
-                attrs: { to: "/estrellas" }
-              },
-              [
-                _c("span", [_vm._v("Estrellas")]),
-                _vm._v(" "),
-                _c("i", { staticClass: "far fa-stars" })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass:
-                  "flex justify-between items-center hover:text-gray-800",
-                class: [
-                  _vm.$route.path.includes("contactos") ? "text-gray-800" : ""
-                ],
-                attrs: { to: "/contactos" }
-              },
-              [
-                _c("span", [_vm._v("Contactos")]),
-                _vm._v(" "),
-                _c("i", { staticClass: "far fa-phone" })
-              ]
-            )
-          ],
-          1
-        )
-      ]),
-      _vm._v(" "),
-      _vm._m(0)
-    ]
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "bot flex flex-col" }, [
       _c(
         "div",
-        { staticClass: "promo flex flex-col justify-center items-center" },
+        { staticClass: "top flex flex-col" },
         [
-          _c(
-            "div",
-            {
-              staticClass:
-                "icon rounded-lg bg-purple-100 inline-block text-accent w-16 h-16 mb-4 flex justify-center items-center text-2xl"
-            },
-            [_c("i", { staticClass: "far fa-suitcase" })]
-          ),
+          _c("div", { staticClass: "logo mb-20" }),
           _vm._v(" "),
           _c(
-            "div",
+            "router-link",
             {
-              staticClass: "description text-gray-300 text-xs text-center mb-4"
+              staticClass:
+                "mb-8 flex justify-between items-center hover:text-gray-800 text-sm text-gray-300",
+              class: [_vm.$route.path == "/" ? "text-gray-800" : ""],
+              attrs: { to: "/" }
             },
             [
-              _vm._v(
-                "\n                Eres una super estrella?\n                "
-              ),
-              _c("a", { staticClass: "underline", attrs: { href: "#" } }, [
-                _vm._v("Abre tu cuenta hoy!")
-              ])
+              _c("i", { staticClass: "far fa-long-arrow-alt-left" }),
+              _vm._v(" "),
+              _c("span", [_vm._v("Volver")])
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "bot flex flex-col flex-1 overflow-y-auto text-sm text-gray-300"
+        },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass:
+                "mb-8 flex justify-between items-center hover:text-gray-800",
+              class: [
+                _vm.$route.path.includes("contactos") ? "text-gray-800" : ""
+              ],
+              attrs: { to: "/estrellas/todos" }
+            },
+            [
+              _c("span", [_vm._v("Todos")]),
+              _vm._v(" "),
+              _c("i", { staticClass: "far fa-stars" })
             ]
           ),
           _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-accent"
-            },
-            [_c("span", [_vm._v("Cuenta Estrella")])]
-          )
-        ]
+          _vm._l(_vm.categories, function(category) {
+            return _c(
+              "router-link",
+              {
+                key: category.id,
+                staticClass:
+                  "mb-8 flex justify-between items-center hover:text-gray-800",
+                class: [
+                  _vm.$route.path.includes("estrellas/" + category.name)
+                    ? "text-gray-800"
+                    : ""
+                ],
+                attrs: { to: "/estrellas/" + category.name.toLowerCase() }
+              },
+              [
+                _c("span", [_vm._v(_vm._s(category.name))]),
+                _vm._v(" "),
+                _c("span", [_vm._v(_vm._s(category.user_count))])
+              ]
+            )
+          })
+        ],
+        2
       )
-    ])
-  }
-]
+    ]
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -69204,13 +69171,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _modules_Users__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/Users */ "./resources/js/store/modules/Users.js");
+/* harmony import */ var _modules_Categories__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/Categories */ "./resources/js/store/modules/Categories.js");
+
 
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   modules: {
-    Users: _modules_Users__WEBPACK_IMPORTED_MODULE_2__["default"]
+    Users: _modules_Users__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Categories: _modules_Categories__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   computed: {
     modal: function modal() {
@@ -69218,6 +69188,70 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
     }
   }
 }));
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/Categories.js":
+/*!**************************************************!*\
+  !*** ./resources/js/store/modules/Categories.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var state = {
+  categories: []
+};
+var getters = {
+  categories: function categories(state) {
+    return state.categories;
+  }
+};
+var actions = {
+  fetchCategories: function fetchCategories(_ref) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var commit, response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              commit = _ref.commit;
+              _context.next = 3;
+              return axios.get("/api/categories");
+
+            case 3:
+              response = _context.sent;
+              commit("setCategories", response.data.data);
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  }
+};
+var mutations = {
+  setCategories: function setCategories(state, categories) {
+    return state.categories = categories;
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state: state,
+  getters: getters,
+  actions: actions,
+  mutations: mutations
+});
 
 /***/ }),
 

@@ -4,58 +4,61 @@
     >
         <div class="top flex flex-col">
             <div class="logo mb-20"></div>
-            <div class="flex flex-col text-sm text-gray-300">
-                <router-link
-                    to="/"
-                    class="mb-8 flex justify-between items-center hover:text-gray-800"
-                    :class="[$route.path == '/' ? 'text-gray-800' : '']"
-                >
-                    <span>Inicio</span>
-                    <i class="far fa-th-large"></i>
-                </router-link>
-                <router-link
-                    to="/estrellas"
-                    class="mb-8 flex justify-between items-center hover:text-gray-800"
-                    :class="[
-                        $route.path.includes('estrellas') ? 'text-gray-800' : ''
-                    ]"
-                >
-                    <span>Estrellas</span>
-                    <i class="far fa-stars"></i>
-                </router-link>
-                <router-link
-                    to="/contactos"
-                    class="flex justify-between items-center hover:text-gray-800"
-                    :class="[
-                        $route.path.includes('contactos') ? 'text-gray-800' : ''
-                    ]"
-                >
-                    <span>Contactos</span>
-                    <i class="far fa-phone"></i>
-                </router-link>
-            </div>
+            <router-link
+                to="/"
+                class="mb-8 flex justify-between items-center hover:text-gray-800 text-sm text-gray-300"
+                :class="[$route.path == '/' ? 'text-gray-800' : '']"
+            >
+                <i class="far fa-long-arrow-alt-left"></i>
+                <span>Volver</span>
+            </router-link>
         </div>
-        <div class="bot flex flex-col">
-            <div class="promo flex flex-col justify-center items-center">
-                <div
-                    class="icon rounded-lg bg-purple-100 inline-block text-accent w-16 h-16 mb-4 flex justify-center items-center text-2xl"
-                >
-                    <i class="far fa-suitcase"></i>
-                </div>
-                <div class="description text-gray-300 text-xs text-center mb-4">
-                    Eres una super estrella?
-                    <a href="#" class="underline">Abre tu cuenta hoy!</a>
-                </div>
-                <button
-                    class="w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-accent"
-                >
-                    <span>Cuenta Estrella</span>
-                </button>
-            </div>
+        <div
+            class="bot flex flex-col flex-1 overflow-y-auto text-sm text-gray-300"
+        >
+            <router-link
+                to="/estrellas/todos"
+                class="mb-8 flex justify-between items-center hover:text-gray-800"
+                :class="[
+                    $route.path.includes('contactos') ? 'text-gray-800' : ''
+                ]"
+            >
+                <span>Todos</span>
+                <i class="far fa-stars"></i>
+            </router-link>
+            <router-link
+                :to="`/estrellas/${category.name.toLowerCase()}`"
+                v-for="category in categories"
+                :key="category.id"
+                class="mb-8 flex justify-between items-center hover:text-gray-800"
+                :class="[
+                    $route.path.includes('estrellas/' + category.name)
+                        ? 'text-gray-800'
+                        : ''
+                ]"
+            >
+                <span>{{ category.name }}</span>
+                <span>{{ category.user_count }}</span>
+            </router-link>
         </div>
     </nav>
 </template>
 
 <script>
-export default {};
+export default {
+    computed: {
+        categories: {
+            get() {
+                return this.$store.state.Categories.categories;
+            },
+            set(value) {
+                return this.$stote.commit("setCategories", value);
+            }
+        }
+    },
+
+    created() {
+        this.$store.dispatch("fetchCategories");
+    }
+};
 </script>

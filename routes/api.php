@@ -8,3 +8,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/estrellas', 'UserController@estrellas');
+Route::get('/categories', 'CategoryController@api');
