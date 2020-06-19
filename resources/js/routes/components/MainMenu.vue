@@ -1,8 +1,8 @@
 <template>
     <nav
-        class="flex flex-col justify-between w-64 py-10 px-16 h-full border-r border-gray-100 border-solid"
+        class="flex flex-col justify-between w-72 h-full border-r border-gray-100 border-solid overflow-hidden"
     >
-        <div class="top flex flex-col">
+        <div class="links flex flex-col flex-1 py-10 px-12">
             <div class="logo mb-20"></div>
             <div class="flex flex-col text-sm text-gray-300">
                 <router-link
@@ -35,7 +35,7 @@
                 </router-link>
             </div>
         </div>
-        <div class="bot flex flex-col">
+        <div class="promos flex flex-col p-10 justify-center items-center">
             <div class="promo flex flex-col justify-center items-center">
                 <div
                     class="icon rounded-lg bg-purple-100 inline-block text-accent w-16 h-16 mb-4 flex justify-center items-center text-2xl"

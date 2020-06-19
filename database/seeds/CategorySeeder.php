@@ -5,16 +5,16 @@ use App\Category;
 
 class CategorySeeder extends Seeder {
     public function run() {
-        Category::create(["name" => "Destacado"]);
-        Category::create(["name" => "Actor"]);
-        Category::create(["name" => "TV"]);
-        Category::create(["name" => "Youtuber"]);
-        Category::create(["name" => "Comediante"]);
-        Category::create(["name" => "Musico"]);
-        Category::create(["name" => "Cantante"]);
-        Category::create(["name" => "Deportista"]);
-        Category::create(["name" => "Instagrammer"]);
-        Category::create(["name" => "Tiktoker"]);
-        Category::create(["name" => "Twittero"]);
+        Category::create(["name" => "Destacados", "slug" => "destacados"]);
+        Category::create(["name" => "Actores", "slug" => "actores"]);
+        Category::create(["name" => "TV", "slug" => "tv"]);
+        Category::create(["name" => "Youtubers", "slug" => "youtubers"]);
+        Category::create(["name" => "Comediantes", "slug" => "comediantes"]);
+        Category::create(["name" => "Musicos", "slug" => "musicos"]);
+        Category::create(["name" => "Cantantes", "slug" => "cantantes"]);
+        Category::create(["name" => "Deportistas", "slug" => "deportistas"]);
+        Category::create(["name" => "Instagrammers", "slug" => "instagrammers"]);
+        Category::create(["name" => "Tiktokers", "slug" => "tiktokers"]);
+        Category::create(["name" => "Twitteros", "slug" => "twitteros"]);
     }
 }

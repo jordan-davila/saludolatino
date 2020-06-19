@@ -18,6 +18,7 @@ module.exports = {
         textColor: theme => ({
             ...theme("colors"),
             "gray-300": "#b6b6b6",
+            "orange-900": "#FD4C3A",
             accent: "#5B4DBE",
             white: "#ffffff"
         }),
@@ -29,6 +30,13 @@ module.exports = {
         fontFamily: {
             display: ["Inter", "sans-serif"],
             body: ["Inter", "sans-serif"]
+        },
+        extend: {
+            spacing: {
+                "72": "18rem",
+                "84": "21rem",
+                "96": "24rem"
+            }
         }
     },
 

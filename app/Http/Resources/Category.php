@@ -9,6 +9,7 @@ class Category extends JsonResource {
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'slug' => $this->slug,
             'user_count' => $this->users->count(),
         ];
     }

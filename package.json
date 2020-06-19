@@ -27,6 +27,7 @@
         "@websanova/vue-auth": "^3.2.1-beta",
         "animate.css": "^4.1.0",
         "inter-ui": "^3.13.1",
+        "smooth-scrollbar": "^8.5.2",
         "tailwindcss": "^1.4.6",
         "vue-js-modal": "^2.0.0-rc.3",
         "vue-router": "^3.3.4",

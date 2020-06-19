@@ -7,23 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\Category as CategoryResource;
 
 class CategoryController extends Controller {
-    public function api() {
+    public function all() {
         return CategoryResource::collection(Category::all());
-    }
-
-    public function store(Request $request) {
-        //
-    }
-
-    public function show(Category $category) {
-        //
-    }
-
-    public function update(Request $request, Category $category) {
-        //
-    }
-
-    public function destroy(Category $category) {
-        //
     }
 }

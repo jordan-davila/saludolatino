@@ -3,7 +3,8 @@ const state = {
         isLoggedIn: false,
         isSubscribed: false
     },
-    estrellas: []
+    stars: [],
+    pagination: []
 };
 
 const getters = {
@@ -11,15 +12,22 @@ const getters = {
 };
 
 const actions = {
-    async fetchEstrellas({ commit }) {
-        const response = await axios.get(`/api/estrellas`);
-        commit("setEstrellas", response.data.data);
+    async fetchStars({ commit }, { category, page = 1 }) {
+        const response = await axios.get(`/api/stars`, {
+            params: {
+                ...(category ? { category: category } : {}),
+                ...(page ? { page: page } : {})
+            }
+        });
+        commit("setStars", response.data.data);
+        commit("setPagination", response.data.meta);
     }
 };
 
 const mutations = {
     setUser: (state, user) => (state.user = user),
-    setEstrellas: (state, estrellas) => (state.estrellas = estrellas)
+    setStars: (state, stars) => (state.stars = stars),
+    setPagination: (state, pagination) => (state.pagination = pagination)
 };
 
 export default {

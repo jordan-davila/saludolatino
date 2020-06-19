@@ -1,9 +1,10 @@
 import Home from "./pages/Home";
-import Estrellas from "./pages/Estrellas";
+import Stars from "./pages/Stars";
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import FourZeroFour from "./pages/404";
 
 import guest from "./middleware/guest";
 import auth from "./middleware/auth";
@@ -16,18 +17,12 @@ export default {
         {
             path: "/",
             name: "home",
-            component: Home,
-            meta: {
-                middleware: [guest]
-            }
+            component: Home
         },
         {
-            path: "/estrellas",
+            path: "/estrellas/:category?",
             name: "estrellas",
-            component: Estrellas,
-            meta: {
-                middleware: [guest]
-            }
+            component: Stars
         },
         {
             path: "/login",
@@ -60,6 +55,11 @@ export default {
             meta: {
                 middleware: [auth]
             }
+        },
+        {
+            path: "/404",
+            name: "404",
+            component: FourZeroFour
         }
     ]
 };
