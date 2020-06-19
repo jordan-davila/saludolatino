@@ -42,14 +42,11 @@ export default {
     },
     methods: {
         goToPage(page) {
-            const time = 500; //ms
-            Scrollbar.get(document.querySelector("#smooth-scroll")).scrollTo(0, 0, time);
-            setTimeout(() => {
-                this.$store.dispatch("fetchStars", {
-                    category: this.$route.params.category,
-                    page: page
-                });
-            }, time);
+            this.$store.dispatch("fetchStars", {
+                category: this.$route.params.category,
+                page: page
+            });
+            Scrollbar.get(document.querySelector("#smooth-scroll")).scrollTo(0, 0, 300);
         }
     }
 };

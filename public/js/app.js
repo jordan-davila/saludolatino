@@ -2146,6 +2146,43 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/routes/components/StarCardsLoader.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/routes/components/StarCardsLoader.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/routes/components/StarMenu.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/routes/components/StarMenu.vue?vue&type=script&lang=js& ***!
@@ -2216,18 +2253,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   methods: {
     getStars: function getStars(category) {
-      var _this = this;
-
-      var time = 500; //ms
-
-      smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"].get(document.querySelector("#smooth-scroll")).scrollTo(0, 0, time);
-      setTimeout(function () {
-        _this.$store.dispatch("fetchStars", _objectSpread({}, category ? {
-          category: category
-        } : {}));
-
-        _this.$router.push("/estrellas".concat([category ? "/" + category : null]));
-      }, time);
+      this.$store.dispatch("fetchStars", _objectSpread({}, category ? {
+        category: category
+      } : {}));
+      this.$router.push("/estrellas".concat([category ? "/" + category : null]));
+      smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"].get(document.querySelector("#smooth-scroll")).scrollTo(0, 0, 300);
     }
   }
 });
@@ -2286,17 +2316,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     goToPage: function goToPage(page) {
-      var _this = this;
-
-      var time = 500; //ms
-
-      smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"].get(document.querySelector("#smooth-scroll")).scrollTo(0, 0, time);
-      setTimeout(function () {
-        _this.$store.dispatch("fetchStars", {
-          category: _this.$route.params.category,
-          page: page
-        });
-      }, time);
+      this.$store.dispatch("fetchStars", {
+        category: this.$route.params.category,
+        page: page
+      });
+      smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__["default"].get(document.querySelector("#smooth-scroll")).scrollTo(0, 0, 300);
     }
   }
 });
@@ -2312,20 +2336,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2532,8 +2542,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SubMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/SubMenu */ "./resources/js/routes/components/SubMenu.vue");
 /* harmony import */ var _components_TitleBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TitleBar */ "./resources/js/routes/components/TitleBar.vue");
 /* harmony import */ var _components_StarCards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/StarCards */ "./resources/js/routes/components/StarCards.vue");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/routes/components/Footer.vue");
-/* harmony import */ var smooth_scrollbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! smooth-scrollbar */ "./node_modules/smooth-scrollbar/index.js");
+/* harmony import */ var _components_StarCardsLoader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/StarCardsLoader */ "./resources/js/routes/components/StarCardsLoader.vue");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/routes/components/Footer.vue");
+/* harmony import */ var smooth_scrollbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! smooth-scrollbar */ "./node_modules/smooth-scrollbar/index.js");
 //
 //
 //
@@ -2548,6 +2559,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 
@@ -2560,10 +2573,21 @@ __webpack_require__.r(__webpack_exports__);
     SubMenu: _components_SubMenu__WEBPACK_IMPORTED_MODULE_1__["default"],
     TitleBar: _components_TitleBar__WEBPACK_IMPORTED_MODULE_2__["default"],
     StarCards: _components_StarCards__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"]
+    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"],
+    StarCardsLoader: _components_StarCardsLoader__WEBPACK_IMPORTED_MODULE_4__["default"]
+  },
+  computed: {
+    starsloading: {
+      get: function get() {
+        return this.$store.state.Users.starsloading;
+      },
+      set: function set(value) {
+        return this.$store.commit("setStarsLoading", value);
+      }
+    }
   },
   mounted: function mounted() {
-    smooth_scrollbar__WEBPACK_IMPORTED_MODULE_5__["default"].init(document.querySelector("#smooth-scroll"), {
+    smooth_scrollbar__WEBPACK_IMPORTED_MODULE_6__["default"].init(document.querySelector("#smooth-scroll"), {
       damping: 0.1,
       renderByPixels: true,
       alwaysShowTracks: false,
@@ -2632,9 +2656,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_SubMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/SubMenu */ "./resources/js/routes/components/SubMenu.vue");
 /* harmony import */ var _components_StarTitleBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/StarTitleBar */ "./resources/js/routes/components/StarTitleBar.vue");
 /* harmony import */ var _components_StarCards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/StarCards */ "./resources/js/routes/components/StarCards.vue");
-/* harmony import */ var _components_StarPaginator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/StarPaginator */ "./resources/js/routes/components/StarPaginator.vue");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/routes/components/Footer.vue");
-/* harmony import */ var smooth_scrollbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! smooth-scrollbar */ "./node_modules/smooth-scrollbar/index.js");
+/* harmony import */ var _components_StarCardsLoader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/StarCardsLoader */ "./resources/js/routes/components/StarCardsLoader.vue");
+/* harmony import */ var _components_StarPaginator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/StarPaginator */ "./resources/js/routes/components/StarPaginator.vue");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/routes/components/Footer.vue");
+/* harmony import */ var smooth_scrollbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! smooth-scrollbar */ "./node_modules/smooth-scrollbar/index.js");
 //
 //
 //
@@ -2650,6 +2675,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 
@@ -2663,11 +2690,23 @@ __webpack_require__.r(__webpack_exports__);
     SubMenu: _components_SubMenu__WEBPACK_IMPORTED_MODULE_1__["default"],
     StarTitleBar: _components_StarTitleBar__WEBPACK_IMPORTED_MODULE_2__["default"],
     StarCards: _components_StarCards__WEBPACK_IMPORTED_MODULE_3__["default"],
-    StarPaginator: _components_StarPaginator__WEBPACK_IMPORTED_MODULE_4__["default"],
-    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"]
+    StarCardsLoader: _components_StarCardsLoader__WEBPACK_IMPORTED_MODULE_4__["default"],
+    StarPaginator: _components_StarPaginator__WEBPACK_IMPORTED_MODULE_5__["default"],
+    Footer: _components_Footer__WEBPACK_IMPORTED_MODULE_6__["default"]
+  },
+  computed: {
+    starsloading: {
+      get: function get() {
+        return this.$store.state.Users.starsloading;
+      },
+      set: function set(value) {
+        return this.$store.commit("setStarsLoading", value);
+      }
+    }
   },
   mounted: function mounted() {
-    smooth_scrollbar__WEBPACK_IMPORTED_MODULE_6__["default"].init(document.querySelector("#smooth-scroll"), {
+    console.log(this.$store.state.Users.stars);
+    smooth_scrollbar__WEBPACK_IMPORTED_MODULE_7__["default"].init(document.querySelector("#smooth-scroll"), {
       damping: 0.1,
       renderByPixels: true,
       alwaysShowTracks: false,
@@ -57241,6 +57280,94 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/routes/components/StarCardsLoader.vue?vue&type=template&id=8bbb5c3c&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/routes/components/StarCardsLoader.vue?vue&type=template&id=8bbb5c3c& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass:
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5 w-full"
+    },
+    _vm._l(15, function(n) {
+      return _c(
+        "div",
+        {
+          key: n,
+          staticClass:
+            "card bg-white bg-opacity-25 h-20 text-white py-24 px-10 object-fill rounded shadow-2xl relative overflow-hidden",
+          staticStyle: { "padding-bottom": "100%" }
+        },
+        [_vm._m(0, true)]
+      )
+    }),
+    0
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "block w-full h-full hover:bg-opacity-0 absolute top-0 left-0 flex flex-col justify-between items-end"
+      },
+      [
+        _c("div", {
+          staticClass:
+            "hintloading price p-2 w-12 h-8 text-sm text-white bg-black bg-opacity-25 rounded font-bold m-4"
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "info-container flex flex-rows p-6 justify-between w-full"
+          },
+          [
+            _c("div", { staticClass: "info" }, [
+              _c("div", {
+                staticClass:
+                  "hintloading w-16 h-4 bg-black bg-opacity-25 rounded mb-4"
+              }),
+              _vm._v(" "),
+              _c("div", {
+                staticClass:
+                  "hintloading w-32 h-6 bg-black bg-opacity-25 rounded"
+              })
+            ]),
+            _vm._v(" "),
+            _c("button", {
+              staticClass:
+                "hintloading icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-black bg-opacity-25 outline-none focus:outline-none"
+            })
+          ]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/routes/components/StarMenu.vue?vue&type=template&id=9f5f43fa&":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/routes/components/StarMenu.vue?vue&type=template&id=9f5f43fa& ***!
@@ -57458,8 +57585,8 @@ var render = function() {
     "div",
     { staticClass: "title-bar flex flex-row justify-between mb-8" },
     [
-      _c("h1", { staticClass: "text-4xl font-bold text-gray-800" }, [
-        _vm._v("Destacados")
+      _c("h1", { staticClass: "text-4xl font-bold text-gray-800 capitalize" }, [
+        _vm._v(_vm._s(_vm.$route.params.category))
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "filters flex flex-row" }, [
@@ -57907,7 +58034,28 @@ var render = function() {
             [
               _c("TitleBar"),
               _vm._v(" "),
-              _c("StarCards", { attrs: { initialCategory: "destacados" } }),
+              _c("StarCardsLoader", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.starsloading,
+                    expression: "starsloading"
+                  }
+                ]
+              }),
+              _vm._v(" "),
+              _c("StarCards", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.starsloading,
+                    expression: "!starsloading"
+                  }
+                ],
+                attrs: { initialCategory: "destacados" }
+              }),
               _vm._v(" "),
               _c("Footer")
             ],
@@ -58035,7 +58183,27 @@ var render = function() {
             [
               _c("StarTitleBar"),
               _vm._v(" "),
-              _c("StarCards"),
+              _c("StarCardsLoader", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.starsloading,
+                    expression: "starsloading"
+                  }
+                ]
+              }),
+              _vm._v(" "),
+              _c("StarCards", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.starsloading,
+                    expression: "!starsloading"
+                  }
+                ]
+              }),
               _vm._v(" "),
               _c("StarPaginator"),
               _vm._v(" "),
@@ -74943,6 +75111,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/routes/components/StarCardsLoader.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/routes/components/StarCardsLoader.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _StarCardsLoader_vue_vue_type_template_id_8bbb5c3c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StarCardsLoader.vue?vue&type=template&id=8bbb5c3c& */ "./resources/js/routes/components/StarCardsLoader.vue?vue&type=template&id=8bbb5c3c&");
+/* harmony import */ var _StarCardsLoader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StarCardsLoader.vue?vue&type=script&lang=js& */ "./resources/js/routes/components/StarCardsLoader.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _StarCardsLoader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _StarCardsLoader_vue_vue_type_template_id_8bbb5c3c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _StarCardsLoader_vue_vue_type_template_id_8bbb5c3c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/routes/components/StarCardsLoader.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/routes/components/StarCardsLoader.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/routes/components/StarCardsLoader.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StarCardsLoader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./StarCardsLoader.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/routes/components/StarCardsLoader.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StarCardsLoader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/routes/components/StarCardsLoader.vue?vue&type=template&id=8bbb5c3c&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/routes/components/StarCardsLoader.vue?vue&type=template&id=8bbb5c3c& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StarCardsLoader_vue_vue_type_template_id_8bbb5c3c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./StarCardsLoader.vue?vue&type=template&id=8bbb5c3c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/routes/components/StarCardsLoader.vue?vue&type=template&id=8bbb5c3c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StarCardsLoader_vue_vue_type_template_id_8bbb5c3c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StarCardsLoader_vue_vue_type_template_id_8bbb5c3c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/routes/components/StarMenu.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/routes/components/StarMenu.vue ***!
@@ -76082,6 +76319,7 @@ var state = {
     isSubscribed: false
   },
   stars: [],
+  starsloading: true,
   pagination: []
 };
 var getters = {
@@ -76100,7 +76338,8 @@ var actions = {
             case 0:
               commit = _ref.commit;
               category = _ref2.category, _ref2$page = _ref2.page, page = _ref2$page === void 0 ? 1 : _ref2$page;
-              _context.next = 4;
+              commit("setStarsLoading", true);
+              _context.next = 5;
               return axios.get("/api/stars", {
                 params: _objectSpread(_objectSpread({}, category ? {
                   category: category
@@ -76109,12 +76348,13 @@ var actions = {
                 } : {})
               });
 
-            case 4:
+            case 5:
               response = _context.sent;
               commit("setStars", response.data.data);
               commit("setPagination", response.data.meta);
+              commit("setStarsLoading", false);
 
-            case 7:
+            case 9:
             case "end":
               return _context.stop();
           }
@@ -76129,6 +76369,9 @@ var mutations = {
   },
   setStars: function setStars(state, stars) {
     return state.stars = stars;
+  },
+  setStarsLoading: function setStarsLoading(state, starsloading) {
+    return state.starsloading = starsloading;
   },
   setPagination: function setPagination(state, pagination) {
     return state.pagination = pagination;

@@ -56,12 +56,9 @@ export default {
 
     methods: {
         getStars(category) {
-            const time = 500; //ms
-            Scrollbar.get(document.querySelector("#smooth-scroll")).scrollTo(0, 0, time);
-            setTimeout(() => {
-                this.$store.dispatch("fetchStars", { ...(category ? { category: category } : {}) });
-                this.$router.push(`/estrellas${[category ? "/" + category : null]}`);
-            }, time);
+            this.$store.dispatch("fetchStars", { ...(category ? { category: category } : {}) });
+            this.$router.push(`/estrellas${[category ? "/" + category : null]}`);
+            Scrollbar.get(document.querySelector("#smooth-scroll")).scrollTo(0, 0, 300);
         }
     }
 };

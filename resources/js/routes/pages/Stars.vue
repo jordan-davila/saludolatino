@@ -5,7 +5,8 @@
             <SubMenu></SubMenu>
             <div id="smooth-scroll" class="flex flex-col flex-1 overflow-y-auto px-16">
                 <StarTitleBar></StarTitleBar>
-                <StarCards></StarCards>
+                <StarCardsLoader v-show="starsloading"></StarCardsLoader>
+                <StarCards v-show="!starsloading"></StarCards>
                 <StarPaginator></StarPaginator>
                 <Footer></Footer>
             </div>
@@ -18,20 +19,25 @@ import StarMenu from "../components/StarMenu";
 import SubMenu from "../components/SubMenu";
 import StarTitleBar from "../components/StarTitleBar";
 import StarCards from "../components/StarCards";
+import StarCardsLoader from "../components/StarCardsLoader";
 import StarPaginator from "../components/StarPaginator";
 import Footer from "../components/Footer";
 import Scrollbar from "smooth-scrollbar";
 
 export default {
-    components: {
-        StarMenu,
-        SubMenu,
-        StarTitleBar,
-        StarCards,
-        StarPaginator,
-        Footer
+    components: { StarMenu, SubMenu, StarTitleBar, StarCards, StarCardsLoader, StarPaginator, Footer },
+    computed: {
+        starsloading: {
+            get() {
+                return this.$store.state.Users.starsloading;
+            },
+            set(value) {
+                return this.$store.commit("setStarsLoading", value);
+            }
+        }
     },
     mounted() {
+        console.log(this.$store.state.Users.stars);
         Scrollbar.init(document.querySelector("#smooth-scroll"), {
             damping: 0.1,
             renderByPixels: true,

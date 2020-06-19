@@ -25,3 +25,32 @@
 .scrollbar-thumb {
     background: rgb(91, 76, 190) !important;
 }
+
+.hintloading {
+    animation: hintloading 2s ease-in-out 0s infinite reverse;
+    -webkit-animation: hintloading 2s ease-in-out 0s infinite reverse;
+}
+
+@keyframes hintloading {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@-webkit-keyframes hintloading {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}

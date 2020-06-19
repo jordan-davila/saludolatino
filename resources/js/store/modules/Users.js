@@ -4,6 +4,7 @@ const state = {
         isSubscribed: false
     },
     stars: [],
+    starsloading: true,
     pagination: []
 };
 
@@ -13,6 +14,7 @@ const getters = {
 
 const actions = {
     async fetchStars({ commit }, { category, page = 1 }) {
+        commit("setStarsLoading", true);
         const response = await axios.get(`/api/stars`, {
             params: {
                 ...(category ? { category: category } : {}),
@@ -21,12 +23,14 @@ const actions = {
         });
         commit("setStars", response.data.data);
         commit("setPagination", response.data.meta);
+        commit("setStarsLoading", false);
     }
 };
 
 const mutations = {
     setUser: (state, user) => (state.user = user),
     setStars: (state, stars) => (state.stars = stars),
+    setStarsLoading: (state, starsloading) => (state.starsloading = starsloading),
     setPagination: (state, pagination) => (state.pagination = pagination)
 };
 
