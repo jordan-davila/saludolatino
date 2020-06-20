@@ -1,34 +1,24 @@
 <template>
-    <nav
-        class="flex flex-col justify-between w-72 h-full border-r border-gray-100 border-solid overflow-hidden"
-    >
+    <nav class="flex flex-col justify-between w-72 h-full border-r border-gray-200 border-solid overflow-hidden">
         <div class="links flex flex-col flex-1 py-10 px-12">
-            <div class="logo mb-20"></div>
-            <div class="flex flex-col text-sm text-gray-300">
-                <router-link
-                    to="/"
-                    class="mb-8 flex justify-between items-center hover:text-gray-800"
-                    :class="[$route.path == '/' ? 'text-gray-800' : '']"
-                >
+            <div class="logo w-full h-6 mb-16"></div>
+            <div class="flex flex-col text-sm text-gray-900">
+                <router-link to="/" class="mb-8 flex justify-between items-center hover:text-accent" :class="[$route.path == '/' ? 'text-accent' : '']">
                     <span>Inicio</span>
                     <i class="far fa-th-large"></i>
                 </router-link>
                 <router-link
                     to="/estrellas"
-                    class="mb-8 flex justify-between items-center hover:text-gray-800"
-                    :class="[
-                        $route.path.includes('estrellas') ? 'text-gray-800' : ''
-                    ]"
+                    class="mb-8 flex justify-between items-center hover:text-accent"
+                    :class="[$route.path.includes('estrellas') ? 'text-accent' : '']"
                 >
                     <span>Estrellas</span>
                     <i class="far fa-stars"></i>
                 </router-link>
                 <router-link
                     to="/contactos"
-                    class="flex justify-between items-center hover:text-gray-800"
-                    :class="[
-                        $route.path.includes('contactos') ? 'text-gray-800' : ''
-                    ]"
+                    class="flex justify-between items-center hover:text-accent"
+                    :class="[$route.path.includes('contactos') ? 'text-accent' : '']"
                 >
                     <span>Contactos</span>
                     <i class="far fa-phone"></i>
@@ -37,18 +27,14 @@
         </div>
         <div class="promos flex flex-col p-10 justify-center items-center">
             <div class="promo flex flex-col justify-center items-center">
-                <div
-                    class="icon rounded-lg bg-purple-100 inline-block text-accent w-16 h-16 mb-4 flex justify-center items-center text-2xl"
-                >
+                <div class="icon rounded bg-gray-300 inline-block text-gray-900 w-16 h-16 mb-4 flex justify-center items-center text-2xl">
                     <i class="far fa-suitcase"></i>
                 </div>
                 <div class="description text-gray-300 text-xs text-center mb-4">
                     Eres una super estrella?
                     <a href="#" class="underline">Abre tu cuenta hoy!</a>
                 </div>
-                <button
-                    class="w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-accent"
-                >
+                <button class="w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-gray-900">
                     <span>Cuenta Estrella</span>
                 </button>
             </div>

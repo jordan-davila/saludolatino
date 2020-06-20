@@ -3,29 +3,28 @@ module.exports = {
     theme: {
         backgroundColor: theme => ({
             ...theme("colors"),
-            accent: "#5B4DBE",
-            "orange-900": "#FD4C3A",
-            "salmon-900": "#FF695D",
-            "salmon-100": "#FFF4F2",
-            "pink-100": "#FFEEF8",
-            "purple-100": "#EFEEFE",
-            body: "#FFFAF6"
+            accent: "#EB5471",
+            black: "#0C0916"
         }),
         borderColor: theme => ({
             ...theme("colors"),
-            "gray-100": "#EAE5E1"
+            accent: "#EB5471",
+            black: "#0C0916",
+            "gray-300": "#A0AAB4"
         }),
         textColor: theme => ({
             ...theme("colors"),
-            "gray-300": "#b6b6b6",
-            "orange-900": "#FD4C3A",
-            accent: "#5B4DBE",
-            white: "#ffffff"
+            accent: "#EB5471",
+            black: "#0C0916",
+            white: "#ffffff",
+            "gray-300": "#A0AAB4"
         }),
         placeholderColor: theme => ({
             ...theme("colors"),
-            "gray-300": "#b6b6b6",
-            accent: "#5B4DBE"
+            accent: "#EB5471",
+            black: "#0C0916",
+            white: "#ffffff",
+            "gray-300": "#A0AAB4"
         }),
         fontFamily: {
             display: ["Inter", "sans-serif"],
@@ -40,6 +39,5 @@ module.exports = {
         }
     },
 
-    variants: ["responsive", "hover", "focus", "active"],
-    plugins: []
+    variants: ["responsive", "hover", "focus", "active"]
 };

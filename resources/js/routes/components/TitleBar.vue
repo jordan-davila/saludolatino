@@ -1,19 +1,17 @@
 <template>
     <div class="title-bar flex flex-row justify-between mb-8">
-        <h1 class="text-4xl font-bold text-gray-800">Estrellas Destacadas</h1>
-        <div class="dropdown relative">
-            <select
-                v-model="filter_date_selection"
-                class="appearance-none leading-tight focus:outline-none w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-gray-800 bg-transparent border-gray-100 border-solid border"
-            >
-                <option v-for="date in filter_date" :value="date" :key="date">{{
-                    date
-                }}</option>
-            </select>
-            <div
-                class="absolute h-10 right-0 top-0 flex items-center pr-4 text-gray-800"
-            >
-                <i class="h-5 text-gray-900 far fa-sort-down"></i>
+        <h1 class="text-4xl font-bold text-gray-900">Estrellas Destacadas</h1>
+        <div class="filters flex flex-row">
+            <div class="flex flex-col justify-center relative mr-4">
+                <select
+                    v-model="filter_date_selection"
+                    class="appearance-none leading-tight focus:outline-none w-32 flex flex-row justify-center items-center rounded text-sm text-gray-900 bg-transparent"
+                >
+                    <option v-for="date in filter_date" :value="date" :key="date">{{ date }}</option>
+                </select>
+                <div class="absolute right-0 flex items-center pr-4 text-gray-900">
+                    <i class="h-5 text-gray-900 far fa-sort-down"></i>
+                </div>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-    <section class="container max-w-none bg-body flex h-screen">
+    <section class="container max-w-none bg-white flex h-screen">
         <MainMenu></MainMenu>
         <section class="flex flex-col h-full w-full overflow-hidden">
             <SubMenu></SubMenu>

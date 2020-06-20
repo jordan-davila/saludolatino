@@ -18,7 +18,7 @@ class Star extends JsonResource {
                     'muted' => false,
                     'language' => "en",
                     'controls' => false,
-                    'preload' => "none",
+                    'preload' => "auto",
                     'poster' => ".." . $this->avatar,
                     'sources' => [
                         ['type' => "video/mp4", 'src' => ".." . $this->video_src]

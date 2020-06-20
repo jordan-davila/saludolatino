@@ -1,5 +1,5 @@
 <template>
-    <section class="container max-w-none bg-body flex h-screen">
+    <section class="container max-w-none bg-white flex h-screen">
         <StarMenu></StarMenu>
         <section class="flex flex-col h-full w-full overflow-hidden">
             <SubMenu></SubMenu>
@@ -23,6 +23,7 @@ import StarCardsLoader from "../components/StarCardsLoader";
 import StarPaginator from "../components/StarPaginator";
 import Footer from "../components/Footer";
 import Scrollbar from "smooth-scrollbar";
+import { mapState } from "vuex";
 
 export default {
     components: { StarMenu, SubMenu, StarTitleBar, StarCards, StarCardsLoader, StarPaginator, Footer },

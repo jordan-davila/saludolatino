@@ -1,56 +1,9 @@
 .logo {
-    background-image: url("../imgs/logo.png");
-    width: 100px;
-    height: 40px;
+    background-image: url("../imgs/logo.svg");
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .card-cover {
     background: linear-gradient(0deg, rgb(23, 28, 37) 0%, rgba(0, 0, 0, 0) 50%);
-}
-
-.no-scrollbar {
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-}
-
-.scrollbar-track {
-    background: none !important;
-}
-
-.scrollbar-thumb {
-    background: rgb(91, 76, 190) !important;
-}
-
-.hintloading {
-    animation: hintloading 2s ease-in-out 0s infinite reverse;
-    -webkit-animation: hintloading 2s ease-in-out 0s infinite reverse;
-}
-
-@keyframes hintloading {
-    0% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.5;
-    }
-}
-
-@-webkit-keyframes hintloading {
-    0% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.5;
-    }
 }
