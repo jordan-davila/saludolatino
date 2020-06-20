@@ -1,0 +1,15 @@
+.no-scrollbar {
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.scrollbar-track {
+    background: none !important;
+}
+
+.scrollbar-thumb {
+    background: #eb5471 !important;
+}

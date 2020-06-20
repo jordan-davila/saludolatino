@@ -1,9 +1,11 @@
 // Base
 @import "base/fonts";
-@import "plugins/tailwind";
 @import "base/icons";
+@import "plugins/tailwind";
 @import "plugins/videojs";
 
 // Variables
 @import "variables";
 @import "base/base";
+@import "base/animations";
+@import "base/scrollbars";

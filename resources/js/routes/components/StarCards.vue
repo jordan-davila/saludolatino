@@ -18,12 +18,12 @@
                 >
                 </video-player>
                 <div class="block card-cover w-full h-full hover:bg-opacity-0 absolute top-0 left-0 flex flex-col justify-between items-end">
-                    <div class="price p-2 text-sm text-white bg-black bg-opacity-25 rounded-lg font-bold m-4">
+                    <div class="price p-2 text-sm text-white bg-gray-900 bg-opacity-25 rounded font-bold m-4">
                         {{ star.price }}
                     </div>
                     <div class="info-container flex flex-rows p-6 justify-between w-full">
                         <div class="info">
-                            <span class="text-orange-900 text-sm font-bold">
+                            <span class="text-accent text-sm font-bold">
                                 <span class="mr-2" v-for="category in star.categories" :key="category.id">
                                     <template v-if="category.id != 1">
                                         {{ category.name }}
@@ -35,14 +35,14 @@
                             </div>
                         </div>
                         <button
-                            class="icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-accent outline-none focus:outline-none"
+                            class="icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-gray-900 outline-none focus:outline-none"
                             @click.prevent="play(star.id)"
                             v-if="star.video.isPlaying == false"
                         >
                             <i class="far fa-play"></i>
                         </button>
                         <button
-                            class="icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-accent outline-none focus:outline-none"
+                            class="icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-gray-900 outline-none focus:outline-none"
                             @click.prevent="pause(star.id)"
                             v-else
                         >

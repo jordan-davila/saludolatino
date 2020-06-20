@@ -1945,9 +1945,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -1961,20 +1958,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2302,6 +2285,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
@@ -2336,6 +2323,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2420,10 +2408,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2443,8 +2427,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -2483,9 +2465,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -2660,6 +2639,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_StarPaginator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/StarPaginator */ "./resources/js/routes/components/StarPaginator.vue");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Footer */ "./resources/js/routes/components/Footer.vue");
 /* harmony import */ var smooth_scrollbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! smooth-scrollbar */ "./node_modules/smooth-scrollbar/index.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 //
 //
 //
@@ -2676,6 +2656,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
@@ -56919,19 +56900,17 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "grid grid-cols-4 items-between border-top border-gray-100 py-16 text-sm text-gray-300"
+          "grid grid-cols-4 items-between border-top border-gray-900 py-16 text-sm text-gray-300"
       },
       [
         _c("div", { staticClass: "col-span-1 flex flex-col justify-between" }, [
-          _c("div", { staticClass: "logo mb-4" }),
-          _vm._v(" "),
           _c("div", { staticClass: "copyrights" }, [
             _vm._v("\n            © 2020 SaludoLatino\n        ")
           ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-span-1 flex flex-col" }, [
-          _c("h1", { staticClass: "text-gray-800 font-bold mb-4" }, [
+          _c("h1", { staticClass: "text-gray-900 font-bold mb-4" }, [
             _vm._v("Estrellas")
           ]),
           _vm._v(" "),
@@ -56943,7 +56922,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-span-1 flex flex-col" }, [
-          _c("h1", { staticClass: "text-gray-800 font-bold mb-4" }, [
+          _c("h1", { staticClass: "text-gray-900 font-bold mb-4" }, [
             _vm._v("Nosotros")
           ]),
           _vm._v(" "),
@@ -56955,7 +56934,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-span-1 flex flex-col" }, [
-          _c("h1", { staticClass: "text-gray-800 font-bold mb-4" }, [
+          _c("h1", { staticClass: "text-gray-900 font-bold mb-4" }, [
             _vm._v("Informacion Adicional")
           ]),
           _vm._v(" "),
@@ -56994,22 +56973,22 @@ var render = function() {
     "nav",
     {
       staticClass:
-        "flex flex-col justify-between w-72 h-full border-r border-gray-100 border-solid overflow-hidden"
+        "flex flex-col justify-between w-72 h-full border-r border-gray-200 border-solid overflow-hidden"
     },
     [
       _c("div", { staticClass: "links flex flex-col flex-1 py-10 px-12" }, [
-        _c("div", { staticClass: "logo mb-20" }),
+        _c("div", { staticClass: "logo w-full h-6 mb-16" }),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "flex flex-col text-sm text-gray-300" },
+          { staticClass: "flex flex-col text-sm text-gray-900" },
           [
             _c(
               "router-link",
               {
                 staticClass:
-                  "mb-8 flex justify-between items-center hover:text-gray-800",
-                class: [_vm.$route.path == "/" ? "text-gray-800" : ""],
+                  "mb-8 flex justify-between items-center hover:text-accent",
+                class: [_vm.$route.path == "/" ? "text-accent" : ""],
                 attrs: { to: "/" }
               },
               [
@@ -57023,9 +57002,9 @@ var render = function() {
               "router-link",
               {
                 staticClass:
-                  "mb-8 flex justify-between items-center hover:text-gray-800",
+                  "mb-8 flex justify-between items-center hover:text-accent",
                 class: [
-                  _vm.$route.path.includes("estrellas") ? "text-gray-800" : ""
+                  _vm.$route.path.includes("estrellas") ? "text-accent" : ""
                 ],
                 attrs: { to: "/estrellas" }
               },
@@ -57040,9 +57019,9 @@ var render = function() {
               "router-link",
               {
                 staticClass:
-                  "flex justify-between items-center hover:text-gray-800",
+                  "flex justify-between items-center hover:text-accent",
                 class: [
-                  _vm.$route.path.includes("contactos") ? "text-gray-800" : ""
+                  _vm.$route.path.includes("contactos") ? "text-accent" : ""
                 ],
                 attrs: { to: "/contactos" }
               },
@@ -57078,7 +57057,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "icon rounded-lg bg-purple-100 inline-block text-accent w-16 h-16 mb-4 flex justify-center items-center text-2xl"
+                  "icon rounded bg-gray-300 inline-block text-gray-900 w-16 h-16 mb-4 flex justify-center items-center text-2xl"
               },
               [_c("i", { staticClass: "far fa-suitcase" })]
             ),
@@ -57103,7 +57082,7 @@ var staticRenderFns = [
               "button",
               {
                 staticClass:
-                  "w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-accent"
+                  "w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-gray-900"
               },
               [_c("span", [_vm._v("Cuenta Estrella")])]
             )
@@ -57179,7 +57158,7 @@ var render = function() {
                     "div",
                     {
                       staticClass:
-                        "price p-2 text-sm text-white bg-black bg-opacity-25 rounded-lg font-bold m-4"
+                        "price p-2 text-sm text-white bg-gray-900 bg-opacity-25 rounded font-bold m-4"
                     },
                     [
                       _vm._v(
@@ -57200,7 +57179,7 @@ var render = function() {
                       _c("div", { staticClass: "info" }, [
                         _c(
                           "span",
-                          { staticClass: "text-orange-900 text-sm font-bold" },
+                          { staticClass: "text-accent text-sm font-bold" },
                           _vm._l(star.categories, function(category) {
                             return _c(
                               "span",
@@ -57236,7 +57215,7 @@ var render = function() {
                             "button",
                             {
                               staticClass:
-                                "icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-accent outline-none focus:outline-none",
+                                "icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-gray-900 outline-none focus:outline-none",
                               on: {
                                 click: function($event) {
                                   $event.preventDefault()
@@ -57250,7 +57229,7 @@ var render = function() {
                             "button",
                             {
                               staticClass:
-                                "icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-accent outline-none focus:outline-none",
+                                "icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-gray-900 outline-none focus:outline-none",
                               on: {
                                 click: function($event) {
                                   $event.preventDefault()
@@ -57330,7 +57309,7 @@ var staticRenderFns = [
       [
         _c("div", {
           staticClass:
-            "hintloading price p-2 w-12 h-8 text-sm text-white bg-black bg-opacity-25 rounded font-bold m-4"
+            "hintloading price p-2 w-12 h-8 text-sm text-white bg-gray-900 bg-opacity-25 rounded font-bold m-4"
         }),
         _vm._v(" "),
         _c(
@@ -57343,18 +57322,18 @@ var staticRenderFns = [
             _c("div", { staticClass: "info" }, [
               _c("div", {
                 staticClass:
-                  "hintloading w-16 h-4 bg-black bg-opacity-25 rounded mb-4"
+                  "hintloading w-16 h-4 bg-gray-900 bg-opacity-25 rounded mb-4"
               }),
               _vm._v(" "),
               _c("div", {
                 staticClass:
-                  "hintloading w-32 h-6 bg-black bg-opacity-25 rounded"
+                  "hintloading w-32 h-6 bg-gray-900 bg-opacity-25 rounded"
               })
             ]),
             _vm._v(" "),
             _c("button", {
               staticClass:
-                "hintloading icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-black bg-opacity-25 outline-none focus:outline-none"
+                "hintloading icon w-12 h-12 flex justify-center items-center p-3 rounded-full text-sm text-white bg-gray-900 bg-opacity-25 outline-none focus:outline-none"
             })
           ]
         )
@@ -57387,20 +57366,20 @@ var render = function() {
     "nav",
     {
       staticClass:
-        "flex flex-col justify-between w-72 h-full border-r border-gray-100 border-solid overflow-hidden"
+        "flex flex-col justify-between w-72 h-full border-r border-gray-200 border-solid overflow-hidden"
     },
     [
       _c(
         "div",
         { staticClass: "links flex flex-col flex-1 h-full py-10 px-12" },
         [
-          _c("div", { staticClass: "logo mb-20" }),
+          _c("div", { staticClass: "logo w-full h-6 mb-16" }),
           _vm._v(" "),
           _c(
             "router-link",
             {
               staticClass:
-                "mb-8 flex justify-between items-center hover:text-gray-800 text-sm text-gray-300",
+                "mb-8 flex justify-between items-center hover:text-accent text-sm text-gray-900",
               attrs: { to: "/" }
             },
             [
@@ -57421,10 +57400,10 @@ var render = function() {
                 "a",
                 {
                   staticClass:
-                    "mb-8 flex justify-between items-center hover:text-gray-800",
+                    "mb-8 flex justify-between items-center hover:text-accent",
                   class:
-                    "mb-8 flex justify-between items-center hover:text-gray-800 cursor-pointer\n                    " +
-                    [_vm.$route.path == "/estrellas" ? "text-gray-800" : null],
+                    "mb-8 flex justify-between items-center hover:text-accent cursor-pointer\n                    " +
+                    [_vm.$route.path == "/estrellas" ? "text-accent" : null],
                   on: {
                     click: function($event) {
                       $event.preventDefault()
@@ -57433,7 +57412,9 @@ var render = function() {
                   }
                 },
                 [
-                  _c("span", [_vm._v("Todos")]),
+                  _c("span", { staticClass: "text-gray-900" }, [
+                    _vm._v("Todos")
+                  ]),
                   _vm._v(" "),
                   _c("i", { staticClass: "far fa-stars" })
                 ]
@@ -57445,10 +57426,10 @@ var render = function() {
                   {
                     key: category.id,
                     class:
-                      "mb-8 flex justify-between items-center hover:text-gray-800 cursor-pointer\n                    " +
+                      "mb-8 flex justify-between items-center hover:text-accent cursor-pointer\n                    " +
                       [
                         _vm.$route.path.includes("estrellas/" + category.slug)
-                          ? "text-gray-800"
+                          ? "text-accent"
                           : null
                       ],
                     on: {
@@ -57459,7 +57440,9 @@ var render = function() {
                     }
                   },
                   [
-                    _c("span", [_vm._v(_vm._s(category.name))]),
+                    _c("span", { staticClass: "text-gray-900" }, [
+                      _vm._v(_vm._s(category.name))
+                    ]),
                     _vm._v(" "),
                     _c("span", [_vm._v(_vm._s(category.user_count))])
                   ]
@@ -57498,13 +57481,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "title-bar flex flex-row justify-center my-12" },
+    { staticClass: "title-bar flex flex-row justify-between my-12" },
     [
       _c(
         "button",
         {
           class:
-            "flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-accent " +
+            "flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-gray-900 " +
             [_vm.pagination.current_page == 1 ? "bg-opacity-25" : null],
           attrs: { disabled: _vm.pagination.current_page == 1 },
           on: {
@@ -57513,14 +57496,18 @@ var render = function() {
             }
           }
         },
-        [_c("i", { staticClass: "far fa-long-arrow-alt-left" })]
+        [
+          _c("i", { staticClass: "far fa-long-arrow-alt-left" }),
+          _vm._v(" "),
+          _c("span", [_vm._v("Anterior")])
+        ]
       ),
       _vm._v(" "),
       _c(
         "div",
         {
           staticClass:
-            "flex flex-row justify-center items-center p-3 rounded text-sm text-gray-800 bg-transparent border-gray-100 border-solid border mx-4"
+            "flex flex-row justify-center items-center p-3 rounded text-sm text-gray-900 bg-transparent border-gray-900 border-solid border mx-4"
         },
         [
           _c("span", [
@@ -57539,7 +57526,7 @@ var render = function() {
         "button",
         {
           class:
-            "flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-accent " +
+            "flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-gray-900 " +
             [
               _vm.pagination.current_page == _vm.pagination.last_page
                 ? "bg-opacity-25"
@@ -57554,7 +57541,11 @@ var render = function() {
             }
           }
         },
-        [_c("i", { staticClass: "far fa-long-arrow-alt-right" })]
+        [
+          _c("span", [_vm._v("Siguiente")]),
+          _vm._v(" "),
+          _c("i", { staticClass: "far fa-long-arrow-alt-right" })
+        ]
       )
     ]
   )
@@ -57585,53 +57576,65 @@ var render = function() {
     "div",
     { staticClass: "title-bar flex flex-row justify-between mb-8" },
     [
-      _c("h1", { staticClass: "text-4xl font-bold text-gray-800 capitalize" }, [
-        _vm._v(_vm._s(_vm.$route.params.category))
-      ]),
+      _vm.$route.params.category
+        ? _c(
+            "h1",
+            { staticClass: "text-4xl font-bold text-gray-900 capitalize" },
+            [_vm._v(_vm._s(_vm.$route.params.category))]
+          )
+        : _c(
+            "h1",
+            { staticClass: "text-4xl font-bold text-gray-900 capitalize" },
+            [_vm._v("Todos")]
+          ),
       _vm._v(" "),
       _c("div", { staticClass: "filters flex flex-row" }, [
-        _c("div", { staticClass: "dropdown relative mr-4" }, [
-          _c(
-            "select",
-            {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.filter_date_selection,
-                  expression: "filter_date_selection"
+        _c(
+          "div",
+          { staticClass: "flex flex-col justify-center relative mr-4" },
+          [
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.filter_date_selection,
+                    expression: "filter_date_selection"
+                  }
+                ],
+                staticClass:
+                  "appearance-none leading-tight focus:outline-none w-32 flex flex-row justify-center items-center rounded text-sm text-gray-900 bg-transparent",
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.filter_date_selection = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
                 }
-              ],
-              staticClass:
-                "appearance-none leading-tight focus:outline-none w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-gray-800 bg-transparent border-gray-100 border-solid border",
-              on: {
-                change: function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.filter_date_selection = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
-                }
-              }
-            },
-            _vm._l(_vm.filter_date, function(date) {
-              return _c("option", { key: date, domProps: { value: date } }, [
-                _vm._v(_vm._s(date))
-              ])
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _vm._m(0)
-        ]),
+              },
+              _vm._l(_vm.filter_date, function(date) {
+                return _c("option", { key: date, domProps: { value: date } }, [
+                  _vm._v(_vm._s(date))
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "dropdown relative" }, [
+        _c("div", { staticClass: "flex flex-col justify-center relative" }, [
           _c(
             "select",
             {
@@ -57644,7 +57647,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none leading-tight focus:outline-none w-56 flex flex-row justify-center items-center p-3 rounded text-sm text-gray-800 bg-transparent border-gray-100 border-solid border",
+                "appearance-none leading-tight focus:outline-none w-48 flex flex-row justify-center items-center rounded text-sm text-gray-900 bg-transparent",
               on: {
                 change: function($event) {
                   var $$selectedVal = Array.prototype.filter
@@ -57682,10 +57685,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "absolute h-10 right-0 top-0 flex items-center pr-4 text-gray-800"
-      },
+      { staticClass: "absolute right-0 flex items-center pr-4 text-gray-900" },
       [_c("i", { staticClass: "h-5 text-gray-900 far fa-sort-down" })]
     )
   },
@@ -57695,10 +57695,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "absolute h-10 right-0 top-0 flex items-center pr-4 text-gray-800"
-      },
+      { staticClass: "absolute right-0 flex items-center pr-4 text-gray-900" },
       [_c("i", { staticClass: "h-5 text-gray-900 far fa-sort-down" })]
     )
   }
@@ -57744,7 +57741,7 @@ var render = function() {
             }
           ],
           staticClass:
-            "w-full pl-10 pr-4 py-3 text-sm text-gray-300 border-gray-100 border border-solid rounded bg-transparent outline-none placeholder-gray-300 focus:shadow",
+            "w-full pl-10 pr-4 py-3 text-sm text-gray-300 border-gray-900 border border-solid rounded bg-transparent outline-none placeholder-gray-300 focus:shadow",
           attrs: { type: "text", placeholder: "Buscar Estrella" },
           domProps: { value: _vm.search },
           on: {
@@ -57771,7 +57768,7 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "absolute h-10 left-0 top-0 flex items-center pl-4 text-sm text-gray-800"
+          "absolute h-10 left-0 top-0 flex items-center pl-4 text-sm text-gray-900"
       },
       [_c("i", { staticClass: "h-2 w-3 mt-2text-gray-900 far fa-search" })]
     )
@@ -57784,11 +57781,11 @@ var staticRenderFns = [
       "div",
       { staticClass: "notifications flex flex-rows items-center" },
       [
-        _c("div", { staticClass: "icon mr-8 w-5 h-5 text-gray-800" }, [
+        _c("div", { staticClass: "icon mr-8 w-5 h-5 text-gray-900" }, [
           _c("i", { staticClass: "far fa-bell" })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "icon mr-8 w-5 h-5 text-gray-800" }, [
+        _c("div", { staticClass: "icon mr-8 w-5 h-5 text-gray-900" }, [
           _c("i", { staticClass: "far fa-bookmark" })
         ]),
         _vm._v(" "),
@@ -57796,7 +57793,7 @@ var staticRenderFns = [
           "button",
           {
             staticClass:
-              "w-40 mr-4 flex flex-row justify-center items-center p-3 rounded text-sm text-gray-800 bg-transparent border-gray-100 border-solid border"
+              "w-40 mr-4 flex flex-row justify-center items-center p-3 rounded text-sm text-gray-900 bg-transparent border-gray-900 border-solid border"
           },
           [_c("span", [_vm._v("Ingresar")])]
         ),
@@ -57805,7 +57802,7 @@ var staticRenderFns = [
           "button",
           {
             staticClass:
-              "w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-accent"
+              "w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-gray-900"
           },
           [_c("span", [_vm._v("Registrate")])]
         )
@@ -57838,49 +57835,55 @@ var render = function() {
     "div",
     { staticClass: "title-bar flex flex-row justify-between mb-8" },
     [
-      _c("h1", { staticClass: "text-4xl font-bold text-gray-800" }, [
+      _c("h1", { staticClass: "text-4xl font-bold text-gray-900" }, [
         _vm._v("Estrellas Destacadas")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "dropdown relative" }, [
+      _c("div", { staticClass: "filters flex flex-row" }, [
         _c(
-          "select",
-          {
-            directives: [
+          "div",
+          { staticClass: "flex flex-col justify-center relative mr-4" },
+          [
+            _c(
+              "select",
               {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.filter_date_selection,
-                expression: "filter_date_selection"
-              }
-            ],
-            staticClass:
-              "appearance-none leading-tight focus:outline-none w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-gray-800 bg-transparent border-gray-100 border-solid border",
-            on: {
-              change: function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.filter_date_selection = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
-              }
-            }
-          },
-          _vm._l(_vm.filter_date, function(date) {
-            return _c("option", { key: date, domProps: { value: date } }, [
-              _vm._v(_vm._s(date))
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _vm._m(0)
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.filter_date_selection,
+                    expression: "filter_date_selection"
+                  }
+                ],
+                staticClass:
+                  "appearance-none leading-tight focus:outline-none w-32 flex flex-row justify-center items-center rounded text-sm text-gray-900 bg-transparent",
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.filter_date_selection = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              _vm._l(_vm.filter_date, function(date) {
+                return _c("option", { key: date, domProps: { value: date } }, [
+                  _vm._v(_vm._s(date))
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
       ])
     ]
   )
@@ -57892,10 +57895,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "absolute h-10 right-0 top-0 flex items-center pr-4 text-gray-800"
-      },
+      { staticClass: "absolute right-0 flex items-center pr-4 text-gray-900" },
       [_c("i", { staticClass: "h-5 text-gray-900 far fa-sort-down" })]
     )
   }
@@ -57942,7 +57942,7 @@ var staticRenderFns = [
       },
       [
         _c("div", { staticClass: "w-84 flex flex-col" }, [
-          _c("h1", { staticClass: "text-4xl text-gray-800 font-bold mb-4" }, [
+          _c("h1", { staticClass: "text-4xl text-gray-900 font-bold mb-4" }, [
             _vm._v(
               "\n            Esta página está perdida en el limbo\n        "
             )
@@ -57958,7 +57958,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass:
-                "w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-accent",
+                "w-40 flex flex-row justify-center items-center p-3 rounded text-sm text-white bg-gray-900",
               attrs: { href: "/" }
             },
             [_vm._v("\n            Sacame de Aquí\n        ")]
@@ -58015,7 +58015,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "container max-w-none bg-body flex h-screen" },
+    { staticClass: "container max-w-none bg-white flex h-screen" },
     [
       _c("MainMenu"),
       _vm._v(" "),
@@ -58164,7 +58164,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "container max-w-none bg-body flex h-screen" },
+    { staticClass: "container max-w-none bg-white flex h-screen" },
     [
       _c("StarMenu"),
       _vm._v(" "),
