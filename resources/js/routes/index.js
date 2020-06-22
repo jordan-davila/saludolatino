@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import FourZeroFour from "./pages/404";
 
+import page from "./middleware/page";
 import guest from "./middleware/guest";
 import auth from "./middleware/auth";
 import subscribed from "./middleware/subscribed";
@@ -17,19 +18,25 @@ export default {
         {
             path: "/",
             name: "home",
-            component: Home
+            component: Home,
+            meta: {
+                middleware: [page]
+            }
         },
         {
             path: "/estrellas/:category?",
             name: "estrellas",
-            component: Stars
+            component: Stars,
+            meta: {
+                middleware: [page]
+            }
         },
         {
             path: "/login",
             name: "login",
             component: Login,
             meta: {
-                middleware: [guest]
+                middleware: [page, guest]
             }
         },
         {
@@ -37,7 +44,7 @@ export default {
             name: "register",
             component: Register,
             meta: {
-                middleware: [guest]
+                middleware: [page, guest]
             }
         },
         {
@@ -45,7 +52,7 @@ export default {
             name: "profile",
             component: Profile,
             meta: {
-                middleware: [guest]
+                middleware: [page, guest]
             }
         },
         {
@@ -53,7 +60,7 @@ export default {
             name: "dashboard",
             component: Dashboard,
             meta: {
-                middleware: [auth]
+                middleware: [page, auth]
             }
         },
         {

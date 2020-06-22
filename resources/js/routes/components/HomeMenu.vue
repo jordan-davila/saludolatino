@@ -1,8 +1,11 @@
 <template>
     <nav class="flex flex-col justify-between w-72 h-full border-r border-gray-200 border-solid overflow-hidden">
-        <div class="links flex flex-col flex-1 py-10 px-12">
-            <div class="logo w-full h-6 mb-16"></div>
-            <div class="flex flex-col text-sm text-gray-900">
+        <div class="py-10 px-12 w-full">
+            <div class="logo w-full h-6"></div>
+        </div>
+        <!-- HomeMenu -->
+        <section class="flex flex-col flex-1 justify-between py-10 px-12">
+            <div class="links flex flex-col flex-1 text-sm text-gray-900 items">
                 <router-link to="/" class="mb-8 flex justify-between items-center hover:text-accent" :class="[$route.path == '/' ? 'text-accent' : '']">
                     <span>Inicio</span>
                     <i class="far fa-th-large"></i>
@@ -24,8 +27,6 @@
                     <i class="far fa-phone"></i>
                 </router-link>
             </div>
-        </div>
-        <div class="promos flex flex-col p-10 justify-center items-center">
             <div class="promo flex flex-col justify-center items-center">
                 <div class="icon rounded bg-gray-300 inline-block text-gray-900 w-16 h-16 mb-4 flex justify-center items-center text-2xl">
                     <i class="far fa-suitcase"></i>
@@ -38,7 +39,7 @@
                     <span>Cuenta Estrella</span>
                 </button>
             </div>
-        </div>
+        </section>
     </nav>
 </template>
 

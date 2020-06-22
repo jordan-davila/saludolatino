@@ -1,15 +1,11 @@
 const state = {
-    user: {
-        isLoggedIn: false,
-        isSubscribed: false
-    },
     stars: [],
     starsloading: true,
     pagination: []
 };
 
 const getters = {
-    auth: state => state.user
+    stars: state => state.stars
 };
 
 const actions = {
@@ -28,7 +24,6 @@ const actions = {
 };
 
 const mutations = {
-    setUser: (state, user) => (state.user = user),
     setStars: (state, stars) => (state.stars = stars),
     setStarsLoading: (state, starsloading) => (state.starsloading = starsloading),
     setPagination: (state, pagination) => (state.pagination = pagination)

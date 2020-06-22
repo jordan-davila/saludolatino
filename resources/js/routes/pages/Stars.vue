@@ -38,7 +38,6 @@ export default {
         }
     },
     mounted() {
-        console.log(this.$store.state.Users.stars);
         Scrollbar.init(document.querySelector("#smooth-scroll"), {
             damping: 0.1,
             renderByPixels: true,
