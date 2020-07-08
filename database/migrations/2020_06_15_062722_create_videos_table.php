@@ -13,8 +13,12 @@ class CreateVideosTable extends Migration {
     public function up() {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->integer('from_id');
-            $table->integer('to_id');
+            $table->unsignedInteger('from_id')
+                ->foreign('from_id')
+                ->references('id')->on('users');
+            $table->unsignedInteger('to_id')
+                ->foreign('to_id')
+                ->references('id')->on('users');
             $table->string('src');
             $table->string('thumbnail')->nullable();
             $table->boolean('private')->default(false);

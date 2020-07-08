@@ -11,3 +11,17 @@
 .video-js .vjs-tech {
     object-fit: cover;
 }
+
+.video-js .vjs-big-play-button {
+    @apply bg-indigo-600;
+    @apply rounded-full;
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    padding: 0 !important;
+    border: none !important;
+    bottom: 2rem;
+    right: calc(50% - 2.5rem);
+    line-height: 3.25rem !important;
+    top: unset !important;
+    left: unset !important;
+}

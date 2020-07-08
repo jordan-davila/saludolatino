@@ -1,0 +1,28 @@
+.vm--container {
+    position: absolute !important;
+    height: 100% !important;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .vm--overlay {
+        position: absolute !important;
+        height: 100% !important;
+        width: 100% !important;
+        @apply bg-gray-900;
+        opacity: 0.75;
+    }
+}
+
+.modal {
+    overflow: hidden;
+}
+
+.video-modal {
+    width: 720px !important;
+    height: 90% !important;
+    top: unset !important;
+    left: unset !important;
+    @apply bg-gray-800;
+}

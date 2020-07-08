@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\Video as VideoResource;
 use App\Http\Resources\Category as CategoryResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -11,6 +12,8 @@ class Star extends JsonResource {
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
+            'avatar' => $this->avatar,
+            'description' => $this->description,
             'price' => "$" . number_format($this->price, 2, '.', ','),
             'video' => [
                 'isPlaying' => false,
@@ -25,7 +28,7 @@ class Star extends JsonResource {
                     ],
                 ]
             ],
-            'avatar' => $this->avatar,
+            'videos' => VideoResource::collection($this->videos),
             'categories' => CategoryResource::collection($this->categories),
         ];
     }

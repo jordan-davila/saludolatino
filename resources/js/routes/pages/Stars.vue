@@ -1,32 +1,30 @@
 <template>
-    <section class="container max-w-none bg-white flex h-screen">
-        <StarMenu></StarMenu>
-        <section class="flex flex-col h-full w-full overflow-hidden">
-            <SubMenu></SubMenu>
-            <div id="smooth-scroll" class="flex flex-col flex-1 overflow-y-auto px-16">
-                <StarTitleBar></StarTitleBar>
-                <StarCardsLoader v-show="starsloading"></StarCardsLoader>
+    <div class="content-container flex w-full h-full overflow-hidden">
+        <StarFilter></StarFilter>
+        <div id="star-smooth-scroll" class="stars-container flex flex-col flex-1 overflow-y-auto">
+            <Dots :rows="7" :cols="4" bgColor="bg-gray-700" accentColor="bg-indigo-600" class="absolute right-0 m-10"></Dots>
+            <div class="p-20 border-b border-solid border-gray-700">
+                <StarCardsLoader :limit="8" v-show="starsloading"></StarCardsLoader>
                 <StarCards v-show="!starsloading"></StarCards>
-                <StarPaginator></StarPaginator>
+            </div>
+            <div class="p-20 border-b border-solid border-gray-700">
                 <Footer></Footer>
             </div>
-        </section>
-    </section>
+        </div>
+    </div>
 </template>
 
 <script>
-import StarMenu from "../components/StarMenu";
-import SubMenu from "../components/SubMenu";
-import StarTitleBar from "../components/StarTitleBar";
-import StarCards from "../components/StarCards";
-import StarCardsLoader from "../components/StarCardsLoader";
-import StarPaginator from "../components/StarPaginator";
-import Footer from "../components/Footer";
+import StarFilter from "../../components/StarFilter";
+import StarCards from "../../components/StarCards";
+import StarCardsLoader from "../../components/StarCardsLoader";
+import StarPaginator from "../../components/StarPaginator";
+import Footer from "../../components/Footer";
 import Scrollbar from "smooth-scrollbar";
-import { mapState } from "vuex";
+import Dots from "../../components/Dots";
 
 export default {
-    components: { StarMenu, SubMenu, StarTitleBar, StarCards, StarCardsLoader, StarPaginator, Footer },
+    components: { StarFilter, StarCards, StarCardsLoader, StarPaginator, Footer, Dots },
     computed: {
         starsloading: {
             get() {
@@ -38,12 +36,24 @@ export default {
         }
     },
     mounted() {
-        Scrollbar.init(document.querySelector("#smooth-scroll"), {
+        Scrollbar.init(document.querySelector("#star-smooth-scroll"), {
             damping: 0.1,
             renderByPixels: true,
             alwaysShowTracks: false,
             continuousScrolling: true
         });
+    },
+
+    created() {
+        this.getStars();
+    },
+
+    methods: {
+        getStars() {
+            const category = this.initialCategory ? this.initialCategory : this.$route.params.category;
+            const page = this.$route.query.pagina ? this.$route.query.pagina : 1;
+            this.$store.dispatch("fetchStars", { ...(category ? { category: category } : {}), ...(page ? { page: page } : {}) });
+        }
     }
 };
 </script>

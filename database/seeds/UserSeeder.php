@@ -11,10 +11,12 @@ class UserSeeder extends Seeder {
             $user->roles()->attach(2);
             $user->categories()->attach(rand(2, 11));
             if (rand(0, 1)) $user->categories()->attach(1);;
-            factory(App\Video::class, rand(3, 9))->create([
-                'from_id' => $user->id,
-                'to_id' => $users->random()->id,
-            ]);
+            for ($i = 0; $i < rand(4, 12); $i++) {
+                factory(App\Video::class)->create([
+                    'from_id' => $user->id,
+                    'to_id' => $users->random()->id,
+                ]);
+            }
         });
     }
 }

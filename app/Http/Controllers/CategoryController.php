@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Resources\Category as CategoryResource;
 
 class CategoryController extends Controller {
-    public function all() {
-        return CategoryResource::collection(Category::all());
+    public function all(Request $filters) {
+        // Check if Limit
+        $category = ($filters->has('limit')) ? Category::limit($filters['limit'])->get() : Category::all();
+        return CategoryResource::collection($category);
     }
 }

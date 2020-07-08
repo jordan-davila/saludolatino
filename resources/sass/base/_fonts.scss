@@ -1,12 +1,1 @@
-@import "~inter-ui/default";
-@import "~inter-ui/variable";
-
-html {
-    font-family: "Inter", "system-ui" !important;
-}
-
-@supports (font-variation-settings: normal) {
-    html {
-        font-family: "Inter var", "system-ui" !important;
-    }
-}
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;500;600;700;800&display=swap");

@@ -1,29 +1,33 @@
 <template>
-    <section class="container max-w-none bg-white flex h-screen">
-        <HomeMenu></HomeMenu>
-        <section class="flex flex-col h-full w-full overflow-hidden">
-            <SubMenu></SubMenu>
-            <div id="smooth-scroll" class="flex flex-col flex-1 overflow-y-auto px-16">
-                <TitleBar></TitleBar>
-                <StarCardsLoader v-show="starsloading"></StarCardsLoader>
-                <StarCards initialCategory="destacados" v-show="!starsloading"></StarCards>
-                <Footer></Footer>
-            </div>
-        </section>
-    </section>
+    <div id="home-smooth-scroll" class="content-container flex flex-col w-full h-full overflow-y-auto">
+        <div class="p-20 border-b border-solid border-gray-700">
+            <TitleBar></TitleBar>
+            <StarCardsLoader :limit="8" v-show="starsloading"></StarCardsLoader>
+            <StarCards :limit="8" initialCategory="destacados" v-show="!starsloading"></StarCards>
+        </div>
+        <div class="p-20 border-b border-solid border-gray-700">
+            <StarCardsLoader :limit="8" v-show="starsloading"></StarCardsLoader>
+            <StarCards :limit="8" initialCategory="destacados" v-show="!starsloading"></StarCards>
+        </div>
+        <div class="p-20 border-b border-solid border-gray-700">
+            <StarPromotion></StarPromotion>
+        </div>
+        <div class="p-20 border-b border-solid border-gray-700">
+            <Footer></Footer>
+        </div>
+    </div>
 </template>
 
 <script>
-import HomeMenu from "../components/HomeMenu";
-import SubMenu from "../components/SubMenu";
-import TitleBar from "../components/TitleBar";
-import StarCards from "../components/StarCards";
-import StarCardsLoader from "../components/StarCardsLoader";
-import Footer from "../components/Footer";
+import TitleBar from "../../components/TitleBar";
+import StarCards from "../../components/StarCards";
+import StarCardsLoader from "../../components/StarCardsLoader";
+import StarPromotion from "../../components/StarPromotion";
+import Footer from "../../components/Footer";
 import Scrollbar from "smooth-scrollbar";
 
 export default {
-    components: { HomeMenu, SubMenu, TitleBar, StarCards, Footer, StarCardsLoader },
+    components: { TitleBar, StarCards, Footer, StarCardsLoader, StarPromotion },
     computed: {
         starsloading: {
             get() {
@@ -35,7 +39,7 @@ export default {
         }
     },
     mounted() {
-        Scrollbar.init(document.querySelector("#smooth-scroll"), {
+        Scrollbar.init(document.querySelector("#home-smooth-scroll"), {
             damping: 0.1,
             renderByPixels: true,
             alwaysShowTracks: false,

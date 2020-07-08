@@ -1,9 +1,12 @@
 import Home from "./pages/Home";
 import Stars from "./pages/Stars";
 import Profile from "./pages/Profile";
+import Videos from "./pages/Videos";
+import Request from "./pages/Request";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Subscribe from "./pages/Subscribe";
 import FourZeroFour from "./pages/404";
 
 import page from "./middleware/page";
@@ -32,28 +35,53 @@ export default {
             }
         },
         {
-            path: "/login",
-            name: "login",
+            path: "/ingresar",
+            name: "ingresar",
             component: Login,
             meta: {
                 middleware: [page, guest]
             }
         },
         {
-            path: "/register",
-            name: "register",
+            path: "/inscribete",
+            name: "inscribete",
+            component: Subscribe,
+            meta: {
+                middleware: [page, guest]
+            }
+        },
+        {
+            path: "/registrate",
+            name: "registrate",
             component: Register,
             meta: {
                 middleware: [page, guest]
             }
         },
         {
-            path: "/profile/:talent",
-            name: "profile",
+            path: "/estrella/:star",
             component: Profile,
-            meta: {
-                middleware: [page, guest]
-            }
+            name: "profile",
+            redirect: "/estrella/:star/videos",
+            children: [
+                {
+                    path: "videos",
+                    name: "videos",
+                    component: Videos,
+                    meta: {
+                        middleware: [page, guest]
+                    }
+                },
+                {
+                    path: "peticion",
+                    name: "request",
+                    component: Request,
+                    meta: {
+                        // Change this to auth
+                        middleware: [page, guest]
+                    }
+                }
+            ]
         },
         {
             path: "/dashboard",

@@ -4,24 +4,43 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SaludoLatino</title>
+    @hasSection('title') <title> @yield('title') - {{ config('app.name') }}</title>
+    @else <title>{{ config('app.name') }}</title> @endif
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+    <!-- Scripts & Tokens -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ mix('js/app.js') }}" defer></script>
+
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/mix-webmanifest.json">
-    <link rel="manifest" href="/site.webmanifest">
 </head>
 
-<body>
+<body class="bg-gray-900">
     <main id="app">
-        <router-view></router-view>
+        <section class="container max-w-none bg-gray-900 flex flex-col h-screen">
+            <main-menu></main-menu>
+            <section class="flex h-full w-full overflow-hidden">
+                <sub-menu></sub-menu>
+                <div class="content-container flex-1 w-full relative">
+                    <transition name="fade">
+                        <router-view></router-view>
+                    </transition>
+                </div>
+            </section>
+        </section>
     </main>
-    @if(config('app.env') == 'local')
+
+    @env('local')
     <script src="http://localhost:35729/livereload.js"></script>
-    @endif
+    @endenv
 </body>
 
 </html>

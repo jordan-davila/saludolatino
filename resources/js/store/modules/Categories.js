@@ -7,8 +7,12 @@ const getters = {
 };
 
 const actions = {
-    async fetchCategories({ commit }) {
-        const response = await axios.get(`/api/categories`);
+    async fetchCategories({ commit }, limit) {
+        const response = await axios.get(`/api/categories`, {
+            params: {
+                ...(limit ? { limit: limit } : {})
+            }
+        });
         commit("setCategories", response.data.data);
     }
 };

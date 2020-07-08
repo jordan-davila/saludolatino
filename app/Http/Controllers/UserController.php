@@ -23,24 +23,28 @@ class UserController extends Controller {
             });
         }
 
-        return StarResource::collection($users->paginate(15));
+        // Filter By Category
+        $users_result = $filters->has('limit') ? $users->limit($filters->input('limit'))->get() : $users->paginate(16);
+        return StarResource::collection($users_result);
     }
 
-    public function create() {
+    public function profile(User $user) {
+        return new StarResource($user);
     }
 
-    public function store(Request $request) {
-    }
+    public function search(Request $request) {
+        $users = User::whereHas('roles', function (Builder $query) {
+            $query->where('name', 'like', 'Estrella');
+        });
 
-    public function show($id) {
-    }
+        if ($request->has('query')) {
+            if ($request->input('query') != '') {
+                $users->where(function (Builder $query) use ($request) {
+                    $query->where('name', 'like', "%{$request->input('query')}%");
+                });
+            }
+        }
 
-    public function edit($id) {
-    }
-
-    public function update(Request $request, $id) {
-    }
-
-    public function destroy($id) {
+        return StarResource::collection($users->limit(5)->get());
     }
 }

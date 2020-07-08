@@ -26,6 +26,11 @@ class User extends Authenticatable {
         return $this->belongsToMany('App\Role');
     }
 
+    public function videos() {
+        // If user is star return video_from_id else return videos_to_id
+        return $this->roles->contains(2) ? $this->hasMany('App\Video', 'from_id') : $this->hasMany('App\Video', 'to_id');
+    }
+
     public function categories() {
         return $this->belongsToMany('App\Category');
     }
