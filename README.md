@@ -1,10 +1,16 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h3 align="center">SaludoLatino</h3>
+  <h3 align="center">WIP - SaludoLatino</h3>
 </p>
 
-[![Terribooks][product-screenshot]](https://terribooks.com)
+[![Terribooks][product-screenshot]](https://saludolatino.jordandavila.com)
+
+### About
+
+A work in progress project developed to provide services similar to cameo.com. The only difference is that it was designed for more spanish speaking users and celebrities. 
+
+[View Demo](https://saludolatino.jordandavila.com)
 
 ### Built With
 
